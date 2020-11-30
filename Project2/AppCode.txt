@@ -1,0 +1,150 @@
+import React, { Component } from 'react';
+import DatePicker from 'react-native-datepicker';
+
+import {
+  StyleSheet,
+  AppRegistry,
+  TextInput,
+  View,
+  Alert,
+  Button,
+  Picker,
+  Text
+} from 'react-native';
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      NameInput: '',
+      BirthdayInput: '',
+      CityInput: '',
+      GenderInput: '',
+      OccupationInput: '',
+      warningMsg: 'Use only letters'
+    };
+  }
+
+   validateInput = (input) => {
+   var re = /^[A-Za-z. ]+$/;
+   return re.test(input);
+   };
+
+    validateInput2 = (input) => {
+      var re = /^[A-Za-z ]+$/;
+      return re.test(input);
+    };
+
+  CheckTextInput = () => {
+           if (!this.validateInput(this.state.NameInput) || !this.validateInput2(this.state.CityInput)) {
+                if (!this.validateInput(this.state.NameInput) && !this.validateInput2(this.state.CityInput)){
+                  alert('Input Error: Inappropriate character use for Full Name and City!');
+                }
+                else if (!this.validateInput(this.state.NameInput)){
+                   alert('Input Error: Inappropriate character use for Full Name!');
+                }
+                else if (!this.validateInput2(this.state.CityInput)){
+                   alert('Input Error: Inappropriate character use for City!');
+                }
+        }
+        else {
+               alert('We received your answers. Thank you!');
+        }
+    };
+
+  render() {
+    return (
+      <View style={styles.MainContainer}>
+        <TextInput
+          accessibilityLabel="nameInput"
+          placeholder="Full Name"
+          onChangeText={NameInput => this.setState({ NameInput })}
+          underlineColorAndroid="transparent"
+          style={styles.TextInput}
+          maxLength={250}
+        />
+        <Text>
+                  {this.state.warningMsg}
+                </Text>
+        <DatePicker
+                accessibilityLabel="birthdayPicker"
+                style={styles.TextInput}
+                date={this.state.BirthdayInput}
+                mode="date"
+                placeholder="Birthday"
+                format="DD-MM-YYYY"
+                minDate="01-01-1901"
+                maxDate="01-01-2021"
+                confirmBtnText="Confirm"
+                cancelBtnText="Cancel"
+                customStyles={{
+                  dateIcon: {
+                    position: 'absolute',
+                    left: 0,
+                    top: 4,
+                    marginLeft: 0
+                  },
+                  dateInput: {
+                    marginLeft: 36
+                  }
+                }}
+                onDateChange={(BirthdayInput) => {this.setState({BirthdayInput: BirthdayInput})}}
+              />
+        <TextInput
+          accessibilityLabel="cityInput"
+          placeholder="City"
+          onChangeText={CityInput => this.setState({ CityInput })}
+          underlineColorAndroid="transparent"
+          style={styles.TextInput}
+          maxLength={100}
+                />
+           <Text>
+                             {this.state.warningMsg}
+                           </Text>
+         <Picker
+           accessibilityLabel="genderSelect"
+           selectedValue={this.state.GenderInput}
+           style={styles.TextInput}
+           onValueChange={(itemValue, itemIndex) =>
+             this.setState({GenderInput: itemValue})
+           }>
+           <Picker.Item label="Gender" value="" />
+           <Picker.Item label="Male" value="Male" />
+           <Picker.Item label="Female" value="Female" />
+           <Picker.Item label="Other" value="Other" />
+          </Picker>
+          <TextInput
+            accessibilityLabel="occupationInput"
+            placeholder="Occupation"
+            onChangeText={OccupationInput => this.setState({ OccupationInput })}
+            underlineColorAndroid="transparent"
+            style={styles.TextInput}
+                          />
+        <View style={{ marginTop: 35 }}>
+          <Button
+            accessibilityLabel="submitButton"
+            title="Submit Form"
+            onPress={this.CheckTextInput}
+            color="#606070"
+            disabled={(!this.validateInput(this.state.NameInput) || this.state.BirthdayInput == '' || !this.validateInput(this.state.CityInput) || this.state.OccupationInput == '' || this.state.GenderInput == '' ) ? true : false}
+          />
+        </View>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  MainContainer: {
+    flex: 1,
+    margin: 35,
+  },
+
+  TextInput: {
+    width: '100%',
+    height: 40,
+    borderWidth: 1,
+    marginTop: 15,
+  },
+});
+

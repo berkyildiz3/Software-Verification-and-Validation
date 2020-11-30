@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bilkent Accounts :: Login </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <section>
+        <div class="logo">
+            <a href="file:///C:/Users/BERKYILDIZ/Desktop/cs458/starsLogin/index.html">
+                <img src="logo.png" alt="Bilkent Accounts">
+            </a>
+        </div>
+        <div class="logo2">
+            <img src="title.png" alt="logo2">
+        </div>
+    </section>
+    <form id="form1">
+        <label for="bilkent_ID">Bilkent ID:</label>
+        <input id="bilkent_ID">
+        <br><br>
+        <label for="password">Password:</label>
+        <input id="password" type="password"><br><br>
+        <button id="loginButton" type="button" onclick="getInfo()">Login</button>
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>

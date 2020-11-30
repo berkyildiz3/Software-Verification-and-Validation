@@ -1,0 +1,109 @@
+
+//Enter valid Full Name, Birthday, City, Gender & Occupation
+
+MobileElement element = (MobileElement) driver.findElementByAccessibilityId("nameInput");
+element.sendKeys("Jack Nicholson");
+element = (MobileElement) driver.findElementByAccessibilityId("birthdayPicker");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("ViewGroup(0)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("View(4)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("cityInput");
+element.sendKeys("New Jersey");
+element = (MobileElement) driver.findElementByAccessibilityId("genderSelect");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("CheckedTextView(1)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("occupationInput");
+element.sendKeys("Actor");
+element = (MobileElement) driver.findElementByAccessibilityId("submitButton");
+element.click();
+String message = driver.switchTo().alert().getText();
+if(message.equals("We received your answers. Thank you!")) System.out.println("Test for valid inputs is successful.");
+else System.out.println("Test for valid inputs fails!");
+
+
+//Leave Full Name blank and enter valid Birthday, City, Gender & Occupation.
+
+element = (MobileElement) driver.findElementByAccessibilityId("birthdayPicker");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("ViewGroup(0)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("View(4)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("cityInput");
+element.sendKeys("New Jersey");
+element = (MobileElement) driver.findElementByAccessibilityId("genderSelect");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("CheckedTextView(1)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("occupationInput");
+element.sendKeys("Actor");
+element = (MobileElement) driver.findElementByAccessibilityId("submitButton");
+element.click();
+if(element.isEnabled()) System.out.println("Submit Button is enabled. Test fails!");
+else System.out.println("Submit Button is still disabled. Test passes.");
+
+ 
+//Leave Gender blank and enter valid Full Name, Birthday, City & Occupation.
+
+element = (MobileElement) driver.findElementByAccessibilityId("nameInput");
+element.sendKeys("Jack Nicholson");
+element = (MobileElement) driver.findElementByAccessibilityId("birthdayPicker");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("ViewGroup(0)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("View(4)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("cityInput");
+element.sendKeys("New Jersey");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("occupationInput");
+element.sendKeys("Actor");
+element = (MobileElement) driver.findElementByAccessibilityId("submitButton");
+element.click();
+if(element.isEnabled()) System.out.println("Submit Button enabled. Test fails!");
+else System.out.println("Submit Button is still disabled. Test passes.");
+
+ 
+//Enter invalid Full Name, enter valid Birthday, City, Gender & Occupation.
+
+element = (MobileElement) driver.findElementByAccessibilityId("nameInput");
+element.sendKeys("rebellion_33");
+element = (MobileElement) driver.findElementByAccessibilityId("birthdayPicker");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("ViewGroup(0)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("View(4)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("cityInput");
+element.sendKeys("New Jersey");
+element = (MobileElement) driver.findElementByAccessibilityId("genderSelect");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("CheckedTextView(1)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("occupationInput");
+element.sendKeys("Actor");
+element = (MobileElement) driver.findElementByAccessibilityId("submitButton");
+element.click();
+if(element.isEnabled()) System.out.println("Submit Button enabled. Test fails!");
+else System.out.println("Submit Button is still disabled. Test passes.");
+
+
+//Do not choose Birthday and enter valid Full Name, City, Gender & Occupation.
+
+element = (MobileElement) driver.findElementByAccessibilityId("nameInput");
+element.sendKeys("Jack Nicholson");	
+element = (MobileElement) driver.findElementByAccessibilityId("cityInput");
+element.sendKeys("New Jersey");
+element = (MobileElement) driver.findElementByAccessibilityId("genderSelect");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("CheckedTextView(1)");
+element.click();
+element = (MobileElement) driver.findElementByAccessibilityId("occupationInput");
+element.sendKeys("Actor");
+element = (MobileElement) driver.findElementByAccessibilityId("submitButton");
+element.click();
+if(element.isEnabled()) System.out.println("Submit Button enabled. Test fails!");
+else System.out.println("Submit Button is still disabled. Test passes.");

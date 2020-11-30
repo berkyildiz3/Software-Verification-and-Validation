@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Covid-19 Tracker</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+  </head>
+  <style>
+    #form1 {
+      width: 100%;
+      margin-left: 40%;
+      margin-right: 25%;
+    }
+    h1 {
+      width: 100%;
+      margin-left: 41%;
+      margin-right: 25%;
+    }
+    #backHomepage {
+      width: 100%;
+      margin-left: 40%;
+      margin-right: 25%;
+    }
+  </style>
+
+  <body>
+    <h1>Track Your Condition</h1>
+    <br />
+    <form id="form1">
+      <h4>Please fill in all fields!</h4>
+      <label for="bodyTemperature"
+        >Body
+        Temperature:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="bodyTemperature" placeholder="Enter in celcius" /><br /><br />
+      <label for="coughInput"
+        >Cough
+        Level:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="coughInput" placeholder="Rate between 0 and 10" />
+      <br /><br />
+      <label for="difficultBreathing">Difficult Breathing Level:</label>
+      <input id="difficultBreathing" placeholder="Rate between 0 and 10" />
+
+      <br /><br />
+      <label for="chillsInput"
+        >Chills
+        Level:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="chillsInput" placeholder="Rate between 0 and 10" />
+      <br /><br />
+      <label for="musclePain"
+        >Muscle Pain
+        Level:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="musclePain" placeholder="Rate between 0 and 10" /><br /><br />
+      <label for="soreThroat"
+        >Sore Throat
+        Level:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="soreThroat" placeholder="Rate between 0 and 10" /><br /><br />
+      <label for="lossTasteSmell"
+        >Loss of Taste or Smell:&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="lossTasteSmell" placeholder="Yes or No" />
+
+      <br /><br />
+      <button id="checkButton" type="button" onclick="checkStatus()">
+        Check My Status
+      </button>
+    </form>
+    <div id="backHomepage">
+      <h3>
+        <a
+          href="file:///C:/Users/BERKYILDIZ/Desktop/cs458/project4/covid/index.html"
+          >Homepage</a
+        >
+      </h3>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

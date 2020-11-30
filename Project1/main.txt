@@ -1,0 +1,44 @@
+
+var accounts = [
+    {
+        bilkent_ID: "1234567",
+        password: "something"
+    },
+    {
+        bilkent_ID: "7654321",
+        password: "something1"
+    },
+    {
+        bilkent_ID: "9362845",
+        password: "something3"
+    }
+]
+function getInfo() {
+    var bilkent_ID = document.getElementById("bilkent_ID").value;
+    var password = document.getElementById("password").value;
+
+    if (bilkent_ID == "" && password == "") {
+        alert("Bilkent ID and password cannot be blank!")
+        return;
+    }
+    else if (bilkent_ID == "" || password == "") {
+        if (bilkent_ID == "") {
+            alert("Bilkent ID cannot be blank!")
+            return;
+        }
+        else if (password == "") {
+            alert("Password cannot be blank!")
+            return;
+        }
+    }
+    for (i = 0; i < accounts.length; i++) {
+        if (bilkent_ID == accounts[i].bilkent_ID && password == accounts[i].password) {
+            alert("You are logged in.")
+            return;
+        }
+        else {
+            alert("Bilkent ID or password is wrong!")
+            return;
+        }
+    }
+}

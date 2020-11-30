@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Covid-19 Tracker</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+  </head>
+  <style>
+    #form1 {
+      width: 100%;
+      margin-left: 40%;
+      margin-right: 25%;
+    }
+    h1 {
+      width: 100%;
+      margin-left: 41%;
+      margin-right: 25%;
+    }
+    #backHomepage {
+      width: 100%;
+      margin-left: 40%;
+      margin-right: 25%;
+    }
+    #symptoms {
+      width: 100%;
+      margin-left: 40%;
+      margin-right: 25%;
+    }
+  </style>
+
+  <body>
+    <h1>Profile Information</h1>
+    <br />
+    <form id="form1">
+      <h4>Please fill in all fields!</h4>
+      <label for="fullName"
+        >Full Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="fullName"/><br /><br />
+      <label for="age"
+        >Age:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="age" />
+      <br /><br />
+      <label for="gender">Gender:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+      <input id="gender"/>
+
+      <br /><br />
+      <label for="country"
+        >Country:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="country"/>
+      <br /><br />
+      <label for="city"
+        >City:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="city" /><br /><br />
+      <label for="district"
+        >District:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label
+      >
+      <input id="district" /><br /><br />
+       <br />
+      <button id="updateButton" type="button" onclick="updateProfile()">
+        Update Profile
+      </button>
+    </form>
+    <div id="symptoms">
+      <h3>
+        <a
+          href="file:///C:/Users/BERKYILDIZ/Desktop/cs458/project4/covid/symptoms.html"
+          >Enter Symptoms</a
+        >
+      </h3>
+    </div>
+    <div id="backHomepage">
+      <h3>
+        <a
+          href="file:///C:/Users/BERKYILDIZ/Desktop/cs458/project4/covid/index.html"
+          >Homepage</a
+        >
+      </h3>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
