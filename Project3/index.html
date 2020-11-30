@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>City Finder</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <style>
+      #map {
+        height: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #header {
+        text-align: center;
+      }
+      #menu {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Welcome to City Finder</h1>
+    </div>
+    <div id="menu">
+      <ul>
+        <h2><a href="enterCoordinates.html">Enter Coordinates</a></h2>
+        <h2><a href="currentLocation.html">Find My Location</a></h2>
+        <h2><a href="earthCenter.html">Distance to Earth Center</a></h2>
+      </ul>
+    </div>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 39.925533, lng: 32.866287 },
+          zoom: 4,
+        });
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=#######=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>
